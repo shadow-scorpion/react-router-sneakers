@@ -1,0 +1,75 @@
+.header {
+    background-color: #000000;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    color: white;
+}
+
+.body{
+    display: flex;
+}
+
+.nav{
+   background-color: white;
+    min-height: 400px;
+    width: 30%;
+    color:#282c34;
+    font-size: 30px;
+
+}
+
+.content{
+    background-color:#282c34;
+    min-height: 400px;
+    width: 70%;
+    color: white;
+    font-size: 30px;
+}
+
+.footer {
+    background-color: #000000;
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    color: white;
+}
+
+.NavLink {
+    color: black;
+    text-decoration: none;
+}
+
+.NawWrapper {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.NawWrapper > a {
+    text-decoration: none;
+    color: #1e3786;
+}
+
+.NawWrapper > a.active {
+    text-decoration: none;
+    color: #03aeff;
+}
+
+.NawWrapper > a:hover {
+    color: steelblue;
+}
+
+.active {
+    text-decoration: underline;
+    color: blue;
+}
+
+.wrapPicture {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.picture {
+    width: 200px;
+}
