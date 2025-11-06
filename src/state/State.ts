@@ -6,37 +6,24 @@ import adidasModel3
 import kingPuma from "../assets/KING-ULTIMATE-MxSG-Football-Boots-Unisex.webp";
 import lifeStylePuma from "../assets/puma-lifestyle.webp";
 
-export type Sneaker = {
-    id: string;
-    model: string;
-    collection: string;
-    price: string;
-    picture: string;
-}
-
-type SneakersType = {
-    adidas: Sneaker[]
-    puma: Sneaker[]
-}
-
-export const sneakers: SneakersType = {
+export const sneakers = {
     adidas: [
         {
-            id: 'adidas1',
+            id: v1(),
             model: 'ADIDAS ADIFOM TRXN',
             collection: 'new collection1',
             price: '100200$',
             picture: adidasModel1,
         },
         {
-            id: 'adidas2',
+            id: v1(),
             model: 'ADIDAS ADIFOM SUPER',
             collection: 'new collection22',
             price: '200300$',
             picture: adidasModel2
         },
         {
-            id: 'adidas3',
+            id: v1(),
             model: 'ADIDAS SUPER SUPERSKI',
             collection: 'new collection333',
             price: '300400$',
@@ -45,17 +32,17 @@ export const sneakers: SneakersType = {
     ],
     puma: [
         {
-            id: 'puma-king1',
+            id: v1(),
             model: 'King puma football',
             collection: 'collection 2025',
             price: '300400$',
             picture: kingPuma
         },
         {
-            id: 'puma-lifestyle2',
+            id: v1(),
             model: 'Life-style puma football',
-            collection: 'collection 2025 new',
-            price: '300500$',
+            collection: 'collection 2025',
+            price: '300400$',
             picture: lifeStylePuma
         }
     ]

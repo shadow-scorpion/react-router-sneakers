@@ -2,6 +2,15 @@ import s from "../Site.module.css"
 import {NavLink} from "react-router-dom";
 import {sneakers} from "../../state/State.ts";
 
+export type AdidasItem = {
+    id: string;
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+}
+
+
 export const Adidas = () => {
     return (
         <div>

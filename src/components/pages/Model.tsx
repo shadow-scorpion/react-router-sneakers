@@ -1,17 +1,10 @@
 import {useParams} from "react-router-dom";
-import {Sneaker, sneakers} from "../../state/State.ts";
-
-
-
-
+import {sneakers} from "../../state/State.ts";
 
 const Model = () => {
     const params = useParams()
-    // const currentModal = params ? sneakers[params.brand].find((shoes: Sneaker) => shoes.id === params.id) : null
-
+    console.log(params)
     let currentSneaker = null
-
-    // todo: make this component using
 
     switch (params.brand){
         case 'adidas':
@@ -37,7 +30,7 @@ const Model = () => {
                     </div>
                 </div>
                 :
-                <div>This model doesn't exist - {params.brand} {params.id}</div>
+                <h2>This model didn't find</h2>
         )
     )
 };
