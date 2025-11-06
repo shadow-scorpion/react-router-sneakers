@@ -23,7 +23,7 @@ const Time = () => {
             } else {
                 return time.getMinutes()}
         },
-        seconds: ()=>{
+        seconds: ()=> {
             const seconds = time.getSeconds()
             if(seconds< 10) {
                 return '0' + time.getSeconds()
