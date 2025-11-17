@@ -8,6 +8,8 @@ import Time from "./components/pages/Time.tsx";
 import {Clock} from "./components/pages/Clock.tsx";
 import {S} from "./components/pages/_styles.ts";
 import Model from "./components/pages/Model.tsx";
+import SecondTime from "./components/pages/Secondtime/SecondTime.tsx";
+import {Experiment} from "./components/pages/Experiment.tsx";
 
 
 export const App = () => {
@@ -18,6 +20,8 @@ export const App = () => {
         ABIBAS: '/abibas',
         TIME: '/time',
         CLOCK: '/clock',
+        SECOND_TIME: '/second_time',
+        EXPERIMENT: '/experiment',
         ERROR: '/error404',
     } as const
 
@@ -42,6 +46,12 @@ export const App = () => {
                         <S.NawWrapper>
                             <NavLink to={PATH.CLOCK}>Clock</NavLink>
                         </S.NawWrapper>
+                        <S.NawWrapper>
+                            <NavLink to={PATH.SECOND_TIME}>SecondClock</NavLink>
+                        </S.NawWrapper>
+                        <S.NawWrapper>
+                            <NavLink to={PATH.EXPERIMENT}>Experiment</NavLink>
+                        </S.NawWrapper>
                     </nav>
                 </div>
                 <div className={styles.content}>
@@ -52,6 +62,8 @@ export const App = () => {
                         <Route path={PATH.ABIBAS} element={<Abibas/>}/>
                         <Route path={PATH.TIME} element={<Time/>}/>
                         <Route path={PATH.CLOCK} element={<Clock/>}/>
+                        <Route path={PATH.SECOND_TIME} element={<SecondTime mode={'analog'}/>}/>
+                        <Route path={PATH.EXPERIMENT} element={<Experiment/>}/>
                         <Route path={'/:brand/:id'} element={<Model/>}/>
                         <Route path={'/*'} element={<Error404/>}/>
                     </Routes>

@@ -3,7 +3,6 @@ import {sneakers} from "../../state/State.ts";
 
 const Model = () => {
     const params = useParams()
-    console.log(params)
     let currentSneaker = null
 
     switch (params.brand){
