@@ -1,11 +1,15 @@
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import {sneakers} from "../../state/State.ts";
 
 const Model = () => {
     const params = useParams()
+    const pathname = useLocation().pathname
+    const regex = /([a-z]+)/i;
+    const brand = pathname.match(regex)?.[0];
+
     let currentSneaker = null
 
-    switch (params.brand){
+    switch (brand){
         case 'adidas':
             currentSneaker = sneakers.adidas.find(sneaker => sneaker.id === params.id)
             break

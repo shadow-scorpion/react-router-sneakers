@@ -1,12 +1,13 @@
-
 import s from '../Site.module.css'
-import {NavLink} from "react-router-dom";
+import {NavLink, Outlet, useParams} from "react-router-dom";
 import {sneakers} from "../../state/State.ts";
 
-
-
 export const Puma = () => {
+    const {id} = useParams()
 
+    if(id) {
+        return  <Outlet/>
+    }
 
     return (
         <div>

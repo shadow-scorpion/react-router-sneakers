@@ -1,17 +1,15 @@
 import s from "../Site.module.css"
-import {NavLink} from "react-router-dom";
+import {NavLink, Outlet, useParams} from "react-router-dom";
 import {sneakers} from "../../state/State.ts";
 
-export type AdidasItem = {
-    id: string;
-    model: string;
-    collection: string;
-    price: string;
-    picture: string;
-}
-
-
 export const Adidas = () => {
+
+    const {id} = useParams()
+
+    if(id) {
+        return  <Outlet/>
+    }
+
     return (
         <div>
             <h2> ADIDAS</h2>
@@ -25,6 +23,7 @@ export const Adidas = () => {
                     </NavLink>
                 })}
             </div>
+            <Outlet/>
 
             <p>
                 What is Lorem Ipsum?

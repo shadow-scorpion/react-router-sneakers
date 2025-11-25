@@ -6,6 +6,14 @@ import adidasModel3
 import kingPuma from "../assets/KING-ULTIMATE-MxSG-Football-Boots-Unisex.webp";
 import lifeStylePuma from "../assets/puma-lifestyle.webp";
 
+export type AdidasItem = {
+    id: string;
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+}
+
 export const sneakers = {
     adidas: [
         {
