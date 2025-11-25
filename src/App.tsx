@@ -1,16 +1,9 @@
 import styles from "./components/Site.module.css";
-import {Adidas} from "./components/pages/Adidas.tsx";
-import {Puma} from "./components/pages/Puma.tsx";
-import {Abibas} from "./components/pages/Abibas.tsx";
-import {Navigate, NavLink, Outlet, Route, Routes} from "react-router-dom";
-import {Error404} from "./components/pages/Error404.tsx";
-import Time from "./components/pages/Time.tsx";
-import {Clock} from "./components/pages/Clock.tsx";
+
+import {NavLink, Outlet} from "react-router-dom";
+
 import {S} from "./components/pages/_styles.ts";
-import Model from "./components/pages/Model.tsx";
-import SecondTime from "./components/pages/Secondtime/SecondTime.tsx";
-import {Experiment} from "./components/pages/Experiment.tsx";
-import {Prices} from "./components/pages/Prices.tsx";
+
 
 
 export const App = () => {
@@ -25,6 +18,7 @@ export const App = () => {
         SECOND_TIME: '/second_time',
         EXPERIMENT: '/experiment',
         ERROR: '/error404',
+        PROTECTED_PAGE: '/protected_page',
     } as const
 
     return (
@@ -56,6 +50,9 @@ export const App = () => {
                         </S.NawWrapper>
                         <S.NawWrapper>
                             <NavLink to={PATH.EXPERIMENT}>Experiment</NavLink>
+                        </S.NawWrapper>
+                        <S.NawWrapper>
+                            <NavLink to={PATH.PROTECTED_PAGE}>Protected Page</NavLink>
                         </S.NawWrapper>
                     </nav>
                 </div>

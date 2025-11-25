@@ -12,6 +12,8 @@ import SecondTime from "../components/pages/Secondtime/SecondTime.tsx";
 import {Experiment} from "../components/pages/Experiment.tsx";
 import {App} from "../App.tsx";
 import Model from "../components/pages/Model.tsx";
+import {ProtectedPage} from "../components/pages/ProtectedPage.tsx";
+import ProtectedRoute from "../components/pages/ProtectedRoute.tsx";
 
 const PATH = {
     ADIDAS: '/adidas',
@@ -23,6 +25,8 @@ const PATH = {
     SECOND_TIME: '/second_time',
     EXPERIMENT: '/experiment',
     ERROR: '/error404',
+    MODEL: ':model/:id',
+    PROTECTED_PAGE: '/protected_page',
 } as const
 
 export const router = createBrowserRouter([
@@ -34,22 +38,14 @@ export const router = createBrowserRouter([
             {
                 path: PATH.ADIDAS,
                 element: <Adidas/>,
-                children: [
-                    {
-                        path: ':id',
-                        element: <Model/>,
-                    }
-                ]
             },
             {
                 path: PATH.PUMA,
                 element: <Puma/>,
-                children: [
-                    {
-                        path: ':id',
-                        element: <Model/>,
-                    }
-                ]
+            },
+            {
+                path: PATH.MODEL,
+                element: <Model/>,
             },
             {
                 path: PATH.ABIBAS,
@@ -74,6 +70,17 @@ export const router = createBrowserRouter([
             {
                 path: PATH.EXPERIMENT,
                 element: <Experiment/>,
+            },
+            {
+                path: PATH.PROTECTED_PAGE,
+                element:
+                <ProtectedRoute>
+                    <ProtectedPage/>
+                </ProtectedRoute>
+            },
+            {
+                path: '/*',
+                element: <Error404/>,
             },
         ]
 },

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import {useEffect, useState} from "react";
+import {useSearchParams} from "react-router-dom";
 import styles from './Prices.module.css';
 
 type Props = {};
@@ -37,12 +37,32 @@ export const Prices = (props: Props) => {
         }
     ];
 
+    const shoes = [
+        {
+            name: 'reebook',
+            sale: false
+
+        },
+        {
+            name: 'nike',
+            sale: true
+
+        },
+        {
+            name: 'joma',
+            sale: false
+        }
+    ]
+
 
     const [filteredSneakers, setFilteredSneakers] = useState(sneakers);
     const [searchParams, setSearchParams] = useSearchParams()
 
+    // const [filtered2Sneakers, set2FilteredSneakers] = useState(shoes);
+    // const [search2Params, set2SearchParams] = useSearchParams()
+
     useEffect(() => {
-        if(searchParams.get('onSale')==='true'){
+        if (searchParams.get('onSale') === 'true') {
             setFilteredSneakers(filteredSneakers.filter(sneaker => sneaker.onSale))
         } else {
             setSearchParams({})
@@ -53,17 +73,30 @@ export const Prices = (props: Props) => {
 
     function handleOnSale() {
         setSearchParams({onSale: 'true'})
+        setFilteredSneakers(filteredSneakers.filter(sneaker => sneaker.onSale))
     }
 
     function handleReset() {
         setFilteredSneakers(sneakers)
+        setSearchParams({})
     }
+
+    // function setSome() {
+    // }
 
 
     return (
         <div>
             <button onClick={handleOnSale} className={styles.buttonStyle}>On sale</button>
             <button onClick={handleReset} className={styles.buttonStyle}>Reset filter</button>
+            {/*<button onClick={setSome} className={styles.buttonStyle}>Reset </button>*/}
+            <div>
+                {/*{*/}
+                {/*    filtered2Sneakers.map((shoe, index) => {*/}
+                {/*        return <p key={index}>{shoe.name}</p>*/}
+                {/*    })*/}
+                {/*}*/}
+            </div>
 
             <table className={styles.tableStyle}>
                 <thead>
