@@ -35,6 +35,10 @@ export const PATH = {
 
 const publicRoutes: RouteObject[] = [
             {
+                path: '/',
+                element: <Adidas/>
+            },
+            {
                 path: PATH.LOGIN,
                 element: <Loggin/>,
             },

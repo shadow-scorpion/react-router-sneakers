@@ -1,5 +1,5 @@
 import styles from "./components/Site.module.css";
-import {NavLink, Outlet} from "react-router-dom";
+import { NavLink, Outlet, useNavigate} from "react-router-dom";
 import {S} from "./components/pages/_styles.ts";
 
 
@@ -19,6 +19,12 @@ export const App = () => {
         ERROR: '/error404',
         PROTECTED_PAGE: '/protected_page',
     } as const
+
+    const navigate = useNavigate()
+
+    const navigateHandler = () => {
+        navigate(-1)
+    }
 
     return (
         <div>
@@ -59,6 +65,10 @@ export const App = () => {
                     </nav>
                 </div>
                 <div className={styles.content}>
+                    {/*<div className={styles.HorizontalNavigation}>*/}
+                    {/*    <a className={styles.LinkLikeButton} href={'/puma'}>Nazaj</a>*/}
+                    {/*</div>*/}
+                    <button className={styles.ButtonLikeLink} onClick={() => navigateHandler()}>Back</button>
                     <Outlet />
                     {/*<Routes>*/}
                     {/*    <Route path='/' element={<Navigate to={PATH.ADIDAS}/>}/>*/}
