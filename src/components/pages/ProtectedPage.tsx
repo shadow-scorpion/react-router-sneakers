@@ -1,4 +1,4 @@
-import ProtectedRoute from "./ProtectedRoute.tsx";
+
 
 export const ProtectedPage = () => {
     // const [serchParams, setSearchParams] = useSearchParams({})
