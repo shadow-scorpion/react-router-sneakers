@@ -14,6 +14,7 @@ export type AdidasItem = {
     picture: string;
 }
 
+
 export const sneakers = {
     adidas: [
         {

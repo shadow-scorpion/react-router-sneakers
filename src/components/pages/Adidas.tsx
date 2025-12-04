@@ -1,8 +1,15 @@
 import s from "../Site.module.css"
-import {NavLink, Outlet, useParams} from "react-router-dom";
+import {NavLink, Outlet, useLocation, useParams} from "react-router-dom";
 import {sneakers} from "../../state/State.ts";
 
 export const Adidas = () => {
+    const params = useParams()
+    const isCorrectUrl = useLocation().pathname
+    const regex = /([a-z])+/i
+    const modelSneaker = isCorrectUrl.match(regex)?.[0]
+    console.log(modelSneaker)
+    console.log(isCorrectUrl)
+    console.log(params)
 
     const {id} = useParams()
 

@@ -6,6 +6,7 @@ const Model = () => {
     const pathname = useLocation().pathname
     const regex = /([a-z]+)/i;
     const brand = pathname.match(regex)?.[0];
+    console.log(params)
 
     let currentSneaker = null
 

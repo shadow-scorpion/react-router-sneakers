@@ -1,7 +1,5 @@
 import styles from "./components/Site.module.css";
-
 import {NavLink, Outlet} from "react-router-dom";
-
 import {S} from "./components/pages/_styles.ts";
 
 
@@ -9,6 +7,7 @@ import {S} from "./components/pages/_styles.ts";
 export const App = () => {
 
     const PATH = {
+        LOGIN: '/login',
         ADIDAS: '/adidas',
         PUMA: '/puma',
         ABIBAS: '/abibas',
@@ -27,6 +26,9 @@ export const App = () => {
             <div className={styles.body}>
                 <div className={styles.nav}>
                     <nav>
+                        <div className={styles.NawWrapper}>
+                            <NavLink className={({isActive}) => isActive? styles.active : ''} to={PATH.LOGIN}>Login</NavLink>
+                        </div>
                         <div className={styles.NawWrapper}>
                             <NavLink className={({isActive}) => isActive? styles.active : ''} to={PATH.ADIDAS}>Adidas</NavLink>
                         </div>
